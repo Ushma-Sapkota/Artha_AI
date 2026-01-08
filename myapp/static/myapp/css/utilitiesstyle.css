@@ -1,4 +1,4 @@
-/* ================= RESET ================= */
+
 * {
   margin: 0;
   padding: 0;
@@ -13,14 +13,12 @@ body {
   overflow-x: hidden;
 }
 
-/* ================= LAYOUT ================= */
 
 .container {
   max-width: 1200px;
   margin: 20px 0 20px 20px;
 }
 
-/* ================= HEADER ================= */
 
 .header {
   margin-bottom: 32px;
@@ -37,8 +35,6 @@ body {
   color: #6e6e73;
 }
 
-/* ================= CARD ================= */
-
 .card {
   background: white;
   border-radius: 12px;
@@ -48,7 +44,6 @@ body {
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
 }
 
-/* ================= TABS ================= */
 
 .tabs-container {
   display: flex;
@@ -98,7 +93,6 @@ body {
   box-shadow: 0 1px 4px rgba(0,0,0,0.12);
 }
 
-/* ================= TAB CONTENT ================= */
 
 .tab-content {
   display: none;
@@ -108,7 +102,7 @@ body {
   display: block;
 }
 
-/* ================= NOTEBOOK ================= */
+
 
 .form-group {
   display: flex;
@@ -142,7 +136,7 @@ textarea:focus {
   border-color: #1e40af;
   box-shadow: 0 0 0 2px rgba(30, 64, 175, 0.15);
 }
-/* ================= MODALS ================= */
+
 
 dialog.budgetForms {
   background-color: white;
@@ -215,7 +209,6 @@ margin-top:10px;
   margin-top: 12px;
 }
 
-/* ================= NOTES LIST ================= */
 
 .note-item {
   border: 1px solid #cacad1;
@@ -248,8 +241,6 @@ margin-top:10px;
   cursor: pointer;
 }
 
-/* ================= CALCULATORS ================= */
-
 .calculator-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -276,8 +267,6 @@ margin-top:10px;
     grid-template-columns: 1fr;
   }
 }
-
-/* ================= MODALS ================= */
 
 dialog.budgetForms {
   background-color: white;

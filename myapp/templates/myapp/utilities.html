@@ -23,7 +23,7 @@
       </button>
     </div>
 
-    <!-- ================= NOTEBOOK ================= -->
+    
     <div id="notebookContent" class="tab-content active">
 
       <div class="form-group">
@@ -45,7 +45,7 @@
 
     </div>
 
-    <!-- ================= CALCULATORS ================= -->
+    
     <div id="calculatorContent" class="tab-content">
 
       <div class="calculator-grid">
@@ -59,7 +59,7 @@
   </div>
 </div>
 
-<!-- ================= NOTE MODAL ================= -->
+
 <dialog id="noteModal" class="budgetForms">
   <button class="modal-close" onclick="this.closest('dialog').close()">×</button>
   <div class="note-modal-content" style="text-align:center;">
@@ -69,7 +69,6 @@
   </div>
 </dialog>
 
-<!-- ================= TAX MODAL ================= -->
 <dialog id="taxModal" class="budgetForms">
   <button class="modal-close" onclick="this.closest('dialog').close()">×</button>
 
@@ -96,7 +95,7 @@
   </div>
 </dialog>
 
-<!-- ================= EMI MODAL ================= -->
+
 <dialog id="emiModal" class="budgetForms">
   <button class="modal-close" onclick="this.closest('dialog').close()">×</button>
 
@@ -126,7 +125,6 @@
   </div>
 </dialog>
 
-<!-- ================= INTEREST MODAL ================= -->
 <dialog id="interestModal" class="budgetForms">
   <button class="modal-close" onclick="this.closest('dialog').close()">×</button>
 
@@ -168,7 +166,7 @@
 <link rel="stylesheet" href="{% static 'myapp/css/utilitiesstyle.css' %}">
 
 <style>
-/* Modal close button */
+
 .modal-close {
   position: absolute;
   top: 12px;
@@ -204,7 +202,6 @@
 {% block extra_js %}
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script>
-/* ================= TAB SWITCH ================= */
 function switchTab(tab) {
   document.getElementById("notebookTab").classList.toggle("active", tab === "notebook");
   document.getElementById("calculatorTab").classList.toggle("active", tab === "calculator");
@@ -212,7 +209,7 @@ function switchTab(tab) {
   document.getElementById("calculatorContent").classList.toggle("active", tab === "calculator");
 }
 
-/* ================= MODALS ================= */
+
 function openModal(id) {
   const dialog = document.getElementById(id);
   dialog.showModal();
@@ -221,7 +218,7 @@ function openModal(id) {
   dialog.classList.remove('dialog-output');  // reset size
 }
 
-/* ================= NOTES (localStorage) ================= */
+
 let notes = JSON.parse(localStorage.getItem("utilities_notes")) || [];
 
 function saveNote() {
@@ -284,7 +281,7 @@ function openNoteDialog(noteId) {
 
 renderNotes();
 
-/* ================= DONUT CHART HELPERS ================= */
+
 let taxChartInstance, emiChartInstance, interestChartInstance;
 
 function createDonutChart(ctx, labels, data, colors) {
@@ -295,7 +292,7 @@ function createDonutChart(ctx, labels, data, colors) {
   });
 }
 
-/* ================= CALCULATORS ================= */
+
 function calculateTax() {
   const income = +taxIncome.value || 0;
   const rate = +taxRate.value || 0;
