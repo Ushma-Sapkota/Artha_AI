@@ -838,6 +838,7 @@ def help_view(request): return render(request, 'myapp/help.html')
 def profile(request): return render(request, 'myapp/profile.html')
 def settings_view(request): return render(request, 'myapp/settings.html')
 def chatbot(request): return render(request, 'myapp/chatbot.html')
+def utilities(request):return render(request,'myapp/utilities.html')
 
 @csrf_exempt
 def chatbot_api(request):

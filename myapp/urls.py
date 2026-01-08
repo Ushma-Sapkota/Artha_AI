@@ -19,6 +19,7 @@ urlpatterns = [
     path('goal/<int:goal_id>/contribute/', views.add_contribution, name='add_contribution'),
     path('analytics/', views.analytics, name='analytics'),
     path('review/', views.review, name='review'),
+    path('utilities/',views.utilities,name='utilities'),
     path('budget/', views.budget_view, name='budget'),
     path('help/', views.help_view, name='help'),
     path('profile/', views.profile, name='profile'),
