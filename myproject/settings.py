@@ -10,7 +10,15 @@ pymysql.install_as_MySQLdb()
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
+<<<<<<< HEAD
 SECRET_KEY = 'django-insecure-78(tzg5ghtga(nqa47=q6&z5vg@60=01x6b15qbz#z(ff-h!%+'
+=======
+<<<<<<< HEAD
+SECRET_KEY = 'django-insecure-78(tzg5ghtga(nqa47=q6&z5vg@60=01x6b15qbz#z(ff-h!%+'
+=======
+SECRET_KEY = 'put key of homepage here'
+>>>>>>> 8146b54 (Initial commit of AI-Artha1 Django project)
+>>>>>>> ca6b7c55dbc386a851d5016eb536c9b23cd699ba
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -26,8 +34,46 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'corsheaders',  # Added for frontend connection
+<<<<<<< HEAD
     'myapp', 
 ]
+=======
+<<<<<<< HEAD
+    'myapp', 
+]
+=======
+    
+    'social_django',  # Make sure this is here
+    'myapp',
+]
+AUTHENTICATION_BACKENDS = (
+    'social_core.backends.google.GoogleOAuth2',
+    'django.contrib.auth.backends.ModelBackend',
+)
+SITE_ID = 1
+
+SOCIAL_AUTH_PIPELINE = (
+      'social_core.pipeline.social_auth.social_details',
+    'social_core.pipeline.social_auth.social_uid',
+    'social_core.pipeline.social_auth.auth_allowed',
+    'social_core.pipeline.social_auth.social_user',
+    'social_core.pipeline.user.get_username',
+    'social_core.pipeline.user.create_user',
+    'social_core.pipeline.social_auth.associate_user',
+    'social_core.pipeline.social_auth.load_extra_data',
+    'social_core.pipeline.user.user_details',
+    
+    # ✅ custom success message
+    'myapp.social_pipeline.google_signup_message',
+    'myapp.social_pipeline.redirect_to_set_password',
+)
+
+SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = 'put key of google auth here'
+SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = 'put key of google auth here'
+
+SOCIAL_AUTH_GOOGLE_OAUTH2_EXTRA_DATA = ['first_name', 'last_name']
+>>>>>>> 8146b54 (Initial commit of AI-Artha1 Django project)
+>>>>>>> ca6b7c55dbc386a851d5016eb536c9b23cd699ba
 
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware', # Added at the top
@@ -38,6 +84,13 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+    
+>>>>>>> 8146b54 (Initial commit of AI-Artha1 Django project)
+>>>>>>> ca6b7c55dbc386a851d5016eb536c9b23cd699ba
 ]
 
 ROOT_URLCONF = 'myproject.urls'
@@ -52,6 +105,14 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+                'social_django.context_processors.backends',
+                'social_django.context_processors.login_redirect',
+>>>>>>> 8146b54 (Initial commit of AI-Artha1 Django project)
+>>>>>>> ca6b7c55dbc386a851d5016eb536c9b23cd699ba
             ],
         },
     },
@@ -96,9 +157,20 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'   # or your provider
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
+<<<<<<< HEAD
 EMAIL_HOST_USER = 'email'
 EMAIL_HOST_PASSWORD = 'passb' # use app password, not real password
 
+=======
+<<<<<<< HEAD
+EMAIL_HOST_USER = 'email'
+EMAIL_HOST_PASSWORD = 'passb' # use app password, not real password
+
+=======
+EMAIL_HOST_USER = 'email here '
+EMAIL_HOST_PASSWORD = 'password here ' # use app password, not real password
+>>>>>>> 8146b54 (Initial commit of AI-Artha1 Django project)
+>>>>>>> ca6b7c55dbc386a851d5016eb536c9b23cd699ba
 
 
 # Static files (CSS, JavaScript, Images)
@@ -106,4 +178,19 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [BASE_DIR / "static"]
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 
+<<<<<<< HEAD
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+=======
+<<<<<<< HEAD
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+=======
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+LOGIN_URL = '/signin/'
+LOGIN_REDIRECT_URL = '/set-password/'
+LOGOUT_REDIRECT_URL = '/signin/'
+
+SOCIAL_AUTH_LOGIN_REDIRECT_URL = '/set-password/'
+SOCIAL_AUTH_LOGIN_ERROR_URL = '/signin/'
+>>>>>>> 8146b54 (Initial commit of AI-Artha1 Django project)
+>>>>>>> ca6b7c55dbc386a851d5016eb536c9b23cd699ba
